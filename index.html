@@ -1,121 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio23Percent</title>
-
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
-
-        body{
-            background:#0f0f0f;
-            color:white;
-            font-family:Arial, Helvetica, sans-serif;
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            padding:30px;
-        }
-
-        .container{
-            max-width:800px;
-        }
-
-        .logo{
-            font-size:96px;
-            font-weight:900;
-            letter-spacing:4px;
-            margin-bottom:20px;
-        }
-
-        .studio{
-            font-size:32px;
-            margin-bottom:15px;
-            color:#dddddd;
-        }
-
-        .description{
-            font-size:18px;
-            line-height:1.7;
-            color:#bfbfbf;
-            margin-bottom:50px;
-        }
-
-        .links{
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:15px;
-        }
-
-        .links a{
-            text-decoration:none;
-            color:white;
-            border:1px solid #333;
-            padding:14px 24px;
-            border-radius:12px;
-            transition:0.2s;
-        }
-
-        .links a:hover{
-            background:#1f1f1f;
-            border-color:#666;
-        }
-
-        footer{
-            margin-top:50px;
-            color:#666;
-            font-size:14px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>23% — indie game studio</title>
+  <meta name="description" content="23% is a tiny indie game studio chasing unusual graphics and mechanics. Games: Outscape, Papa Pizza.">
+  <meta name="theme-color" content="#0c0c0e">
+  <meta property="og:title" content="23% — indie game studio">
+  <meta property="og:description" content="Small studio. Unusual games. 23% is a small indie game studio looking for unusual solutions in graphics and gameplay.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600&family=Unbounded:wght@600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/games.js"></script>
+  <script src="assets/js/common.js"></script>
 </head>
-<body>
+<body class="home-page" data-root="">
+  <div class="wipe is-intro" aria-hidden="true"></div>
+  <canvas class="dots" id="dots" aria-hidden="true"></canvas>
 
-<div class="container">
+  <div class="hud hud--tl"><span class="logo"><b>23%</b> studio</span></div>
+  <div class="hud hud--tr"><span>Games loaded</span><b id="count">02</b></div>
+  <div class="hud hud--bl">
+    <span>© <span class="year">2026</span> 23%</span>
+  </div>
+  <div class="hud hud--br">
+    <a class="mail" href="mailto:studio23percent@gmail.com"><span>Contact</span><b>studio23percent@gmail.com</b><i aria-hidden="true">↗</i></a>
+  </div>
 
-    <div class="logo">23%</div>
+  <main class="stage" id="stage">
+    <h1 class="sr-only">23% — indie game studio</h1>
 
-    <div class="studio">Studio23Percent</div>
+    <svg class="mark" id="mark" viewBox="0 0 1000 360" role="img" aria-label="23%">
+      <defs>
+        <clipPath id="liquid"><path id="wave" d="M0 360H1000V360H0Z"/></clipPath>
+      </defs>
+      <text class="mark-fill" x="20" y="330" textLength="960" lengthAdjust="spacingAndGlyphs" clip-path="url(#liquid)">23%</text>
+      <text class="mark-outline" x="20" y="330" textLength="960" lengthAdjust="spacingAndGlyphs">23%</text>
+    </svg>
 
-    <div class="description">
-        Independent game development studio creating immersive driving,
-        simulation and entertainment experiences for mobile devices.
-        We focus on building unique games, experimenting with new ideas,
-        and delivering enjoyable experiences for players around the world.
+    <div class="intro">
+      <p class="eyebrow">// indie game studio</p>
+      <p class="statement">Small studio.<br><span class="hl">Unusual</span> games.</p>
+      <p class="lede">We make mobile games that look and feel unlike anything else: custom graphics, honest gameplay, zero copied formulas. We ship games we would play ourselves.</p>
     </div>
 
-    <div class="links">
+    <section class="select" aria-labelledby="selectTitle">
+      <div class="select-head">
+        <span id="selectTitle">▸ Select game<span class="blink">_</span></span>
+        <span class="rule"></span>
+        <span>Press to play</span>
+      </div>
+      <div class="carts" id="carts"></div>
+    </section>
+  </main>
 
-        <a href="https://play.google.com/store/apps/details?id=com.company23.outscape">
-            Google Play
-        </a>
-
-        <a href="https://apps.apple.com/app/outscape-car-simulator/id6764816410">
-            App Store
-        </a>
-
-        <a href="https://www.tiktok.com/@outscape.23?_r=1&_t=ZS-96wCC42JVV1">
-            TikTok
-        </a>
-
-        <a href="https://t.me/outscape">
-            Telegram
-        </a>
-
-    </div>
-
-    <footer>
-        © 2026 Studio23Percent
-    </footer>
-
-</div>
-
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
